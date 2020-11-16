@@ -37,11 +37,11 @@ Site criado a partir de um desafio proposto pela empresa Marlin, cujo o objetivo
 ```bash
 $ git clone https://github.com/gabiqrm/Anc.git
 ```
-2. Acessar a pasta principal do projeto via prompt de comando:
+2. Acessar a pasta principal do projeto via prompt de comando. Ex.:
 ```bash
 $ cd Anc
 ```
-3. Na pasta raiz, executar o arquivo: `index.html`
+3. Na pasta raiz, dê duplo clique no arquivo: `index.html` para abrir o site no navegador.
 
 ---
 ## 🔐 Licença:
