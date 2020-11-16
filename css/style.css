@@ -1,0 +1,934 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  padding: 0px;
+  margin: 0px;
+
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Variáveis de cor para futuras modificações do código*/
+
+:root {
+  --azul-logo: #0499c3;
+  --amarelo-logo: #ffc900;
+  --link-menu: #8f8f8f;
+  --cor-branca: #fff;
+  --azul-maisClaro: #1bb8e9;
+  --font-cinzaEscuro: #585858;
+  --corBarra-titulo: #fbdb62;
+  --bg-beneficios: #f5f5f5;
+  --bg-etiqueta: #000;
+  --bg-textWhatsapp: #00d28d;
+  --bg-footer: #004457;
+  --btn-form: #00d058;
+}
+
+/* Estilo utilizado para criar uma linha amarela embaixo de diversos títulos no site*/
+
+.barra2 {
+  height: 6px;
+  background: var(--corBarra-titulo);
+  width: 100px;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+/*Estilo do menu de navegação do site*/
+
+#menu-icon {
+  display: none;
+}
+
+.menu {
+  background: var(--cor-branca);
+  padding: 30px 0;
+
+}
+
+.menu-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.menu-container::after,
+.menu-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.menu-logo {
+  width: 220px;
+  display: block;
+  float: left;
+  margin-left: 0px;
+}
+
+.menu-nav {
+  float: right;
+  margin-right: 10px;
+}
+
+
+.menu-nav ul li a:not(:only-child)::after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+
+.menu-nav li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  color: var(--link-menu);
+}
+
+.menu-nav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--link-menu);
+  font-size: 0.75em;
+  padding-top: 30px;
+
+  transition: .3s linear;
+}
+
+.menu-nav a:hover {
+  color: var(--azul-logo);
+}
+
+
+.dropdown {
+  display: none;
+  background: transparent;
+  position: absolute;
+  margin: -5px 0 0 0;
+  width: 150px;
+}
+
+.dropdown li {
+  font-size: 14px;
+  margin: -30px 0 0 0;
+  display: block;
+}
+
+.mostrarDropdown {
+  display: block;
+}
+
+/* Estilização da seção intro (introdução do site - Home) */
+.intro {
+  width: 100%;
+  background: url('../img/Background.png'), var(--azul-logo);
+  background-size: 33% 250px;
+  background-position: right, 10px;
+  background-repeat: space;
+  padding: 60px 100px;
+  text-align: center;
+  color: var(--cor-branca);
+}
+
+.pularLinha {
+  display: block;
+}
+
+.intro h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.zerandoPeso-fonte {
+  font-weight: lighter;
+}
+
+.intro h1::after {
+  content: '';
+  display: block;
+  background: var(--cor-branca);
+  margin: 10px auto;
+}
+
+.intro .txt-introducao {
+  font-size: 1.25em;
+}
+
+.font-amarela {
+  color: var(--amarelo-logo);
+}
+
+#btn-home {
+  border: 2px solid var(--amarelo-logo);
+  background: var(--amarelo-logo);
+  color: var(--cor-branca);
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .3s linear;
+}
+
+#btn-home:hover {
+  background: transparent;
+
+}
+
+/* Estilização da seção sobre */
+.sobre {
+  padding: 40px 10px;
+  background: var(--azul-maisClaro);
+}
+
+.barra {
+  height: 6px;
+  background: var(--cor-branca);
+  width: 10%;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.sobre-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sobre-container::after,
+.sobre-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.sobre-container h2 {
+  text-align: center;
+  font-size: 2.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--cor-branca);
+}
+
+.sobre-container p {
+  text-align: center;
+  margin: 20px auto;
+  color: var(--cor-branca);
+}
+
+#sobreItem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 230px);
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre-item {
+  width: 210px;
+  height: 210px;
+  float: left;
+  margin: 5px 20px 20px 10px;
+  background: var(--cor-branca);
+  border-radius: 5px;
+}
+
+.sobre-item p {
+  color: var(--font-cinzaEscuro);
+}
+
+.caixaAlta {
+  text-transform: uppercase;
+}
+
+.txt-medio {
+  font-size: .8em;
+}
+
+.sobre-item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+/* Estilização da seção de Parceiros*/
+
+
+.parceiros {
+  padding: 40px 0;
+  background: var(--cor-branca);
+}
+
+.parceiros-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.parceiros-container::after,
+.parceiros-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+.parceiros-container h2 {
+  text-align: center;
+  font-size: 2.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--azul-logo);
+}
+
+.parceirosItem-container {
+  padding: 40px 0;
+  width: 100%;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit, 440px);
+  justify-content: center;
+  align-items: center;
+}
+
+.parceiros-item {
+  width: 100%;
+  background: var(--cor-branca);
+  border: 2px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-radius: 8px;
+  padding: 40px 10px;
+}
+
+.parceiros-content {
+  height: 320px;
+  margin-bottom: 10px;
+
+}
+
+.parceiros-item p {
+  font-size: 0.875em;
+  line-height: 1.4em;
+  color: #3f4f6c;
+  margin-top: 20px;
+  padding-left: 14px;
+}
+
+.parceiros-item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-parceiros {
+  border: 2px solid var(--azul-logo);
+  background-color: var(--azul-logo);
+  color: var(--cor-branca);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 33%;
+  transition: .2s linear;
+  margin-bottom: 20px;
+}
+
+.btn-parceiros:hover {
+  background-color: transparent;
+  color: var(--azul-logo);
+}
+
+/* Estilização da Seção de Benefícios*/
+
+.beneficios {
+  padding: 40px 0;
+  background: var(--bg-beneficios);
+}
+
+.beneficios-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.beneficios-container::after,
+.beneficios-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+.beneficios-container h2 {
+  text-align: center;
+  font-size: 2.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--azul-logo);
+}
+
+#beneficiosItem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  align-items: center;
+}
+
+.beneficios-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 170px;
+  height: 170px;
+  float: left;
+  background: var(--cor-branca);
+  border-radius: 8px;
+  margin: 40px 10px 10px 10px;
+}
+
+.beneficios-item img {
+  width: 140px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* Estilização da seção de Produtos */
+
+.produtos {
+  padding: 40px 0;
+  background: var(--cor-branca);
+}
+
+.produtos-container {
+
+  padding: 50px 0;
+  max-width: 78%;
+  margin: 0 auto;
+}
+
+.produtos-container::after,
+.produtos-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+.produtos-container h2 {
+  text-align: center;
+  font-size: 2.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--azul-logo);
+}
+
+.produtoItem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 180px);
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+
+.produtos-item {
+  margin-top: 30px;
+  width: 170px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+}
+
+.produto-img {
+  height: 60px;
+}
+
+.produto-img img {
+  width: 100px;
+}
+
+.etiqueta {
+  background: var(--bg-etiqueta);
+  color: #fff;
+  height: 20px;
+  width: 50%;
+  border-radius: 1px;
+  font-weight: bold;
+  font-size: 0.60em;
+  text-align: center;
+  padding-top: 4px;
+}
+
+/* Estilização da Seção de Contato */
+.contato {
+  background: url('../img/ContainerBG.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.contato-container {
+  padding-bottom: 60px;
+  width: 62%;
+  background: #2795b4f3;
+  background-position: relative;
+
+}
+
+
+.contato-container::after,
+.contato-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.contato-container h2 {
+  text-align: center;
+  font-size: 2.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--cor-branca);
+  margin-top: 50px;
+}
+
+.contato-item {
+  border-radius: 5px;
+}
+
+#caixa1 {
+  margin: 30px 0;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.subtitulo-contatoContainer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--cor-branca);
+}
+
+#telefone-contato {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+#caixa2 {
+  background: var(--cor-branca);
+  margin: 0;
+  padding: 15px;
+  width: 410px;
+}
+
+
+.formulario {
+  width: 400px;
+}
+
+.formulario label {
+  position: absolute;
+  margin-left: 5px;
+  font-size: 0.85em;
+  color: #f5f5f5;
+  margin-bottom: 2px;
+}
+
+.formulario input {
+  background: var(--cor-branca);
+  margin-left: 5px;
+  border-radius: 3px;
+  width: 100%;
+  height: 36px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+  padding-left: 5px;
+  border-style: none;
+}
+
+.formulario textarea {
+  background: var(--cor-branca);
+  border-style: none;
+  margin-left: 5px;
+  border-radius: 3px;
+  width: 100%;
+  height: 140px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+  padding-left: 5px;
+}
+
+.formulario button {
+  width: 110px;
+  height: 30px;
+  background: var(--btn-form);
+  border: 2px solid var(--btn-form);
+  border-radius: 3px;
+  color: var(--cor-branca);
+  float: right;
+  transition: .2s linear;
+}
+
+.formulario button:hover {
+  background: transparent;
+  color: var(--cor-branca);
+  cursor: pointer;
+}
+
+.blocoConteudo-contato {
+  width: 100%;
+  padding: 18px 0;
+  margin: 1px 0;
+  height: 90px;
+}
+
+.blocoWhatsapp {
+  border-top: 1px solid rgba(0, 0, 0, 0.100);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.100);
+
+}
+
+.blocoimg {
+  float: left;
+  width: 60px;
+}
+
+.blocotexto {
+  float: right;
+  width: 320px;
+}
+
+.subtitulo-contato {
+  margin: 0px auto;
+  display: block;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: #999999;
+}
+
+.txt-contato {
+  letter-spacing: 1px;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1em;
+}
+
+.negrito {
+  font-weight: 1000;
+}
+
+.negritoPeso-medio {
+  font-weight: 600;
+}
+
+.whatsappDiv-image {
+  background: #00b57c;
+  height: 50px;
+}
+
+.imgWhatsapp {
+  width: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.whatsappText-contato {
+  text-transform: uppercase;
+  background: var(--bg-textWhatsapp);
+  color: white;
+  border: 2px solid var(--bg-textWhatsapp);
+  text-align: center;
+  padding: 13px 0;
+  transition: .3s linear;
+}
+
+.whatsappText-contato:hover {
+  background: transparent;
+  cursor: pointer;
+  color: var(--bg-textWhatsapp);
+}
+
+.blocoWhatsapp-contato {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.blocotexto a {
+  text-decoration: none;
+}
+
+.txtEndereco-contato {
+  font-size: .7em;
+  padding: 4.5px 0;
+  font-weight: 600;
+}
+
+#caixa2 h3 {
+  text-align: center;
+  padding-top: 30px;
+  color: #717171;
+  text-transform: uppercase;
+}
+
+.font-azul {
+  color: var(--azul-logo);
+}
+
+.img-contato {
+  width: 50px;
+}
+
+/* Estilização do Rodapé da Página( Footer) */
+
+.footer {
+  background: var(--bg-footer);
+  padding: 18px 0;
+}
+
+.footer-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container::after,
+.footer-container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.footer p {
+  display: block;
+  float: left;
+  padding-right: 10px;
+  font-size: 0.90em;
+  line-height: 1.7em;
+  text-align: center;
+  color: var(--cor-branca);
+}
+
+.footer img {
+
+  float: left;
+  width: 60px;
+}
+
+/*CSS para monitores e dispositivos com número pixels na horizontal menor do que 900px */
+@media(max-width: 900px) {
+  .menu {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .menu-logo {
+    width: 200px;
+  }
+
+  #menu-icon {
+    display: block;
+    width: 40px;
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .drop {
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+  }
+
+  .dropdown li {
+    border-style: none;
+  }
+
+  .menu-nav {
+
+    position: absolute;
+    top: 80px;
+    background: var(--cor-branca);
+    transform: translateX(-120%);
+    display: block;
+    clear: both;
+    width: 100%;
+    transition: .3s linear;
+  }
+
+  .abrirMenu {
+    transform: translateX(0%);
+  }
+
+  .menu-nav li {
+    padding: 0;
+    text-align: center;
+    display: block;
+    transition: .2s linear;
+
+  }
+
+  .menu-item {
+    border-bottom: 1px dotted #049ac350;
+  }
+
+  .item-drop {
+    border: none;
+  }
+
+  .menu-nav li a {
+    padding: 20px;
+  }
+
+}
+
+/*CSS para monitores e dispositivos com número pixels na horizontal menor do que 700px */
+@media(max-width: 700px) {
+
+  .intro {
+    background-size: contain;
+  }
+
+  .parceirosItem-container {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .parceiros-item {
+    width: 90%;
+  }
+
+  .parceiros-content {
+    height: 390px;
+  }
+
+
+  .bloco-btnParceiros {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .bloco-btnParceiros a {
+    text-decoration: none;
+  }
+
+  .btn-parceiros {
+    padding: 10px 20px;
+    margin-left: 0%;
+  }
+
+  .contato {
+    background: none;
+  }
+
+  .contato-container {
+    width: 100%;
+  }
+
+  #caixa2 {
+    width: 100%;
+  }
+
+  .pularLinha {
+    display: inline;
+  }
+}
+
+/*CSS para monitores e dispositivos com número pixels na horizontal menor do que 415px */
+@media(max-width: 415px) {
+
+
+  .intro {
+    width: 100%;
+    padding: 50px 5px;
+    box-sizing: border-box;
+  }
+
+  .parceiros-content {
+    height: 450px;
+  }
+
+  .formulario {
+    width: 100%;
+  }
+
+  #caixa2 {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .img-contato {
+    margin: 0;
+    margin-top: 15px;
+    width: 50%;
+  }
+
+  .blocotexto {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    width: 73%;
+  }
+
+  .blocoWhatsapp-contato {
+    width: 100%;
+  }
+
+  .imgWhatsapp {
+    width: 40%;
+  }
+
+  .whatsappText-contato {
+    font-size: .9em;
+  }
+
+  .whatsappDiv-image {
+    height: 44px;
+  }
+
+}
